@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function new_jeu()
+        {
+            document.getElementById("firstNumber").value = Math.floor(Math.random()*10) ;
+            document.getElementById("secondNumber").value = Math.floor(Math.random()*10) ;
+
+        }
+        function voirSolution()
+        {
+            var a = +document.getElementById("firstNumber").value;
+            var b = +document.getElementById("secondNumber").value;
+           // document.getElementById("resultat").textContent =  + (a + b);
+           if(!isNaN(a) && !isNaN(b)) document.getElementById("Solution").value = a + b;
+           else alert( "faut entrer des nombres");
+           var res = document.getElementById("resultat").value;
+           if(res== (a+b)) document.getElementById("Appreciation").value = "Tres bien";
+           else document.getElementById("Appreciation").value = "Attention";
+        }
+    </script>
+</head>
+<body>
+    <table style="border:1px solid black; font-family:calibri;">
+        <tr>
+            <td>Premier Nombre</td>
+            <td>
+                <input type="text" id="firstNumber">
+            </td>
+        </tr>
+        <tr>
+            <td>Deuxieme nombre</td>
+            <td>
+                <input type="text" id="secondNumber">
+            </td>
+        </tr>
+        <tr>
+            <td>Resultat</td>
+            <td>
+                <input type="text" id="resultat" >
+            </td>
+        </tr>
+        <tr>
+            <td>Solution</td>
+            <td>
+                <input type="text" id="Solution" >
+            </td>
+        </tr>
+        <tr>
+            <td>Appreciation</td>
+            <td>
+                <input type="text" id="Appreciation" >
+            </td>
+        </tr>
+        <tr>
+            <td><button type="submit" onclick="new_jeu();">Nouveau jeu</button>
+                <button type="submit" onclick="voirSolution();">Voir solution</button></td>
+        </tr>
+    </table>
+</body>
+</html>
